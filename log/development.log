@@ -2764,3 +2764,156 @@ Processing by CommentsController#create as JS
   Rendered comments/_comment.html.erb (0.7ms)
   Rendered comments/create.js.erb (1.9ms)
 Completed 200 OK in 21ms (Views: 4.2ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/posts.json" for 127.0.0.1 at 2013-11-05 12:02:03 +0800
+Processing by PostsController#index as JSON
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.json.jbuilder (66.8ms)
+Completed 200 OK in 70ms (Views: 68.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2013-11-05 12:03:31 +0800
+Processing by PostsController#index as ATOM
+Completed 500 Internal Server Error in 20ms
+
+ActionView::MissingTemplate (Missing template posts/index, application/index with {:locale=>[:en], :formats=>[:atom], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/Users/sophiaraji/GA_WDI/blog/app/views"
+):
+  app/controllers/posts_controller.rb:11:in `index'
+
+
+  Rendered /Users/sophiaraji/.rbenv/versions/custom-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.6ms)
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2013-11-05 12:08:02 +0800
+Processing by PostsController#index as ATOM
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.atom.builder (100.8ms)
+Completed 500 Internal Server Error in 103ms
+
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x007f96d349e7a8>:0x007f96d12926a0>):
+    3:   feed.updated @posts.first.updated_at
+    4: 
+    5:   @posts.each do |posts|
+    6:     feed.entry(post) do |entry|
+    7:       entry.title post.title
+    8:       entry.content post.body, :type => 'html'
+    9: 
+  app/views/posts/index.atom.builder:6:in `block (2 levels) in _app_views_posts_index_atom_builder___1188917534413860612_70142865476020'
+  app/views/posts/index.atom.builder:5:in `block in _app_views_posts_index_atom_builder___1188917534413860612_70142865476020'
+  app/views/posts/index.atom.builder:1:in `_app_views_posts_index_atom_builder___1188917534413860612_70142865476020'
+  app/controllers/posts_controller.rb:11:in `index'
+
+
+  Rendered /Users/sophiaraji/.rbenv/versions/custom-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/sophiaraji/.rbenv/versions/custom-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/sophiaraji/.rbenv/versions/custom-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.2ms)
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2013-11-05 12:08:45 +0800
+Processing by PostsController#index as ATOM
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.atom.builder (3.5ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2013-11-05 12:10:03 +0800
+Processing by PostsController#index as ATOM
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.atom.builder (10.4ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (undefined local variable or method `post' for #<#<Class:0x007f96d349e7a8>:0x007f96d333ebb0>):
+    3:   feed.updated @posts.first.updated_at
+    4: 
+    5:   @posts.each do |posts|
+    6:     feed.entry(post) do |entry|
+    7:       entry.title post.title
+    8:       entry.content post.body, :type => 'html'
+    9: 
+  app/views/posts/index.atom.builder:6:in `block (2 levels) in _app_views_posts_index_atom_builder___1188917534413860612_70142882620940'
+  app/views/posts/index.atom.builder:5:in `block in _app_views_posts_index_atom_builder___1188917534413860612_70142882620940'
+  app/views/posts/index.atom.builder:1:in `_app_views_posts_index_atom_builder___1188917534413860612_70142882620940'
+  app/controllers/posts_controller.rb:11:in `index'
+
+
+  Rendered /Users/sophiaraji/.rbenv/versions/custom-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/sophiaraji/.rbenv/versions/custom-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/sophiaraji/.rbenv/versions/custom-2.0.0-p247/lib/ruby/gems/2.0.0/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.4ms)
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2013-11-05 12:10:15 +0800
+Processing by PostsController#index as ATOM
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.atom.builder (3.4ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2013-11-05 12:12:33 +0800
+Processing by PostsController#index as ATOM
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.atom.builder (3.6ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2013-11-05 12:13:03 +0800
+Processing by PostsController#index as ATOM
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.atom.builder (2.9ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts.atom" for 127.0.0.1 at 2013-11-05 12:13:04 +0800
+Processing by PostsController#index as ATOM
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.atom.builder (20.2ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2013-11-05 12:13:10 +0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered posts/_post.html.erb (0.4ms)
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 1]]
+  Rendered comments/_comment.html.erb (1.2ms)
+  Rendered posts/show.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2013-11-05 12:13:10 +0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-11-05 12:13:10 +0800
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-11-05 12:13:10 +0800
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2013-11-05 12:13:10 +0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-11-05 12:13:10 +0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2013-11-05 12:13:10 +0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-11-05 12:13:10 +0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-11-05 12:13:10 +0800
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2013-11-05 12:13:10 +0800
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2013-11-05 12:13:10 +0800
